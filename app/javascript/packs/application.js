@@ -15,6 +15,7 @@ import 'jquery'
 import('../src/plugins') 
 
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
