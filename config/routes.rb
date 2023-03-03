@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'books/index'
-  get 'books/show'
-  put 'books/update'
+  get 'student/show', to: "student#show"
+  get 'student/index', to: "student#index"
+  # get 'books/show'
+  # put 'books/update'
   # get 'session/new'
   get 'login' ,to: "session#new"
   post    'login', to: "session#create"

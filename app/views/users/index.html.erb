@@ -4,6 +4,7 @@
     <tr>
       <th >#</th>
       <th >username</th>
+      <%# <th>students</th> %>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -12,18 +13,16 @@
   <% @users.each_with_index do |c, index|%>
     <tr>
         <td><%= index + 1 %></td>
-        <td>
-            <%=link_to c.name , {:action=> 'show', :id =>c.id}%>
-        </td>
+        <td><%=link_to c.name , {:controller => 'student', :action=> 'index', :id=>c.id}%></td>
         <td>
          <button type="button" class="btn btn-warning">
            <%=link_to "Edit", {:action=> 'edit',:id =>c.id }%>
          </button>
         </td>
         <td>
-          <button type="button" class="btn btn-danger"> 
+          <button type="button" class="btn btn-danger">
            <%=link_to "Delete", {:action=> 'destroy', :id=>c.id},method: :delete %>
-         </button> 
+         </button>
         </td>
 
     </tr>
@@ -31,5 +30,9 @@
   </tbody>
 </table>
 
-
-<h2><%=link_to "Dang Ki", {:action=> 'new' } %></h2>
+  <button type="button" class="btn btn-warning">
+    <%=link_to "Dang Ki", {:action=> 'new' } %>
+  </button>
+  <button type="button" class="btn btn-warning">
+   <%= link_to "Login",logout_path, method: :delete %>
+</button>
