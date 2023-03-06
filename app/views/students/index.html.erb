@@ -2,3 +2,12 @@
 <h1>danh sach trang chu sinh vien</h1>
 
 <p><%= link_to 'Add Student', new_student_path  %></p>
+
+
+    <% @students.each do |c|%>
+    <tr>
+      <td><h3>Name : <%= c.name %></h3></td>
+      <td><%=link_to "Edit", {:action=> 'edit',:id =>c.id }%></td>
+      <td><%=link_to "Delete", {:action=> 'destroy', :id=>c.id},method: :delete %></td>
+    </tr>  
+    <%end%>
