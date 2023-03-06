@@ -1,0 +1,12 @@
+<h1>Edit Student</h1>
+
+<%= form_for :student, :url => {:action => "update", :id =>@student} , method: :put do |f| %>
+
+<p>name: <%= f.text_field 'name' %></p>
+<p>age: <%= f.text_field  'age' %></p>
+<p>gender: <%= f.text_field  'gender' %></p>
+<p>class_name: <%= f.text_field  'class_name' %></p>
+<%= f.submit "Save"  %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'index' } %>

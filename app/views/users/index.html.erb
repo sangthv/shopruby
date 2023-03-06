@@ -13,7 +13,7 @@
   <% @users.each_with_index do |c, index|%>
     <tr>
         <td><%= index + 1 %></td>
-        <td><%=link_to c.name , {:controller => 'student', :action=> 'index', :id=>c.id}%></td>
+        <td><%=link_to c.name , {:controller => 'students', :action=> 'index', :id=>c.id}%></td>
         <td>
          <button type="button" class="btn btn-warning">
            <%=link_to "Edit", {:action=> 'edit',:id =>c.id }%>

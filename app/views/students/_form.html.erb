@@ -1,0 +1,44 @@
+<%= form_for @student do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <br/>
+
+   <div>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+  <br/>
+
+   <div>
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+    <br/>
+
+   <div>
+    <%= f.label :class_name %>
+    <%= f.text_field :class_name %>
+  </div>
+    <br/>
+
+  <div>
+    <p><strong>parents:</strong></p>
+
+    <div id="parents">
+      <%= f.fields_for :parents do |add| %>
+        <%= render 'parent_fields', f: add %>
+      <% end %>
+
+      <div class="links">
+          <%= link_to_add_association 'add parents', f, :parents %>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <%= f.submit %>
+  <%= link_to 'Back' , students_path %>
+
+  
+<% end %>

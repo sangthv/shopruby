@@ -12,9 +12,11 @@ import "channels"
 import "bootstrap"
 import "../stylesheets/application"
 import 'jquery'
-import('../src/plugins') 
+import('../src/plugins')
 
+require("@nathanvda/cocoon")
 
+console.log('hello world');
 
 Rails.start()
 Turbolinks.start()
